@@ -10,7 +10,7 @@ export const SignatureWork = (): React.JSX.Element => {
   const t = dict.work;
   const railRef = useRef<HTMLDivElement>(null);
 
-  // Mobile: touch-action pan-y keeps page scroll free; we drive horizontal ourselves.
+  // Mobile: vertical page scroll stays free; horizontal gets drag + momentum.
   useEffect(() => {
     const rail = railRef.current;
     if (!rail) {
@@ -21,7 +21,45 @@ export const SignatureWork = (): React.JSX.Element => {
     let startX = 0;
     let startY = 0;
     let startScroll = 0;
+    let lastX = 0;
+    let lastT = 0;
+    let velocity = 0;
     let axis: "x" | "y" | null = null;
+    let raf = 0;
+
+    const stopMomentum = (): void => {
+      if (raf) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+    };
+
+    const clampScroll = (value: number): number => {
+      const max = rail.scrollWidth - rail.clientWidth;
+      return Math.min(Math.max(value, 0), Math.max(max, 0));
+    };
+
+    const runMomentum = (pxPerMs: number): void => {
+      stopMomentum();
+      let v = pxPerMs;
+      let prev = performance.now();
+
+      const tick = (now: number): void => {
+        const dt = Math.min(now - prev, 32);
+        prev = now;
+        if (Math.abs(v) < 0.02) {
+          raf = 0;
+          rail.classList.remove("is-dragging");
+          return;
+        }
+        rail.scrollLeft = clampScroll(rail.scrollLeft + v * dt);
+        // Exponential decay — native-like ease out
+        v *= Math.pow(0.0025, dt / 1000);
+        raf = requestAnimationFrame(tick);
+      };
+
+      raf = requestAnimationFrame(tick);
+    };
 
     const onTouchStart = (event: TouchEvent): void => {
       if (!mobile.matches || event.touches.length !== 1) {
@@ -31,9 +69,13 @@ export const SignatureWork = (): React.JSX.Element => {
       if (!touch) {
         return;
       }
+      stopMomentum();
       startX = touch.clientX;
       startY = touch.clientY;
+      lastX = touch.clientX;
+      lastT = performance.now();
       startScroll = rail.scrollLeft;
+      velocity = 0;
       axis = null;
     };
 
@@ -49,19 +91,35 @@ export const SignatureWork = (): React.JSX.Element => {
       const dy = touch.clientY - startY;
 
       if (!axis) {
-        if (Math.abs(dx) < 10 && Math.abs(dy) < 10) {
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) {
           return;
         }
-        axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+        axis = Math.abs(dx) > Math.abs(dy) * 1.1 ? "x" : "y";
+        if (axis === "x") {
+          rail.classList.add("is-dragging");
+        }
       }
 
-      if (axis === "x") {
-        event.preventDefault();
-        rail.scrollLeft = startScroll - dx;
+      if (axis !== "x") {
+        return;
       }
+
+      event.preventDefault();
+      const now = performance.now();
+      const dt = Math.max(now - lastT, 1);
+      velocity = (touch.clientX - lastX) / dt;
+      lastX = touch.clientX;
+      lastT = now;
+      rail.scrollLeft = clampScroll(startScroll - dx);
     };
 
     const onTouchEnd = (): void => {
+      if (axis === "x") {
+        // Invert: finger right → content scrolls left
+        runMomentum(-velocity);
+      } else {
+        rail.classList.remove("is-dragging");
+      }
       axis = null;
     };
 
@@ -71,6 +129,8 @@ export const SignatureWork = (): React.JSX.Element => {
     rail.addEventListener("touchcancel", onTouchEnd, { passive: true });
 
     return () => {
+      stopMomentum();
+      rail.classList.remove("is-dragging");
       rail.removeEventListener("touchstart", onTouchStart);
       rail.removeEventListener("touchmove", onTouchMove);
       rail.removeEventListener("touchend", onTouchEnd);

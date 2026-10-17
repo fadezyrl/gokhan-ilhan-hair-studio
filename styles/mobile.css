@@ -240,8 +240,13 @@
     padding-left: max(16px, env(safe-area-inset-left, 0px));
     padding-right: max(16px, env(safe-area-inset-right, 0px));
     scroll-snap-type: x proximity;
+    scroll-behavior: auto;
     /* Vertical page scroll always wins; horizontal is handled in JS */
     touch-action: pan-y;
+  }
+
+  .rail.is-dragging {
+    scroll-snap-type: none;
   }
 
   .rail .ph,
