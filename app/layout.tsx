@@ -34,10 +34,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F3F0EB" },
-    { media: "(prefers-color-scheme: dark)", color: "#1a1817" },
-  ],
+  colorScheme: "only light",
+  themeColor: "#F3F0EB",
 };
 
 export default function RootLayout({
@@ -46,6 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang={DEFAULT_LOCALE}
+      data-theme="light"
       className={`${serif.variable} ${sans.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>

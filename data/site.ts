@@ -22,6 +22,6 @@ export const NAV_IDS = {
   colour: "renk",
   cut: "kesim",
   studio: "studyo",
-  bridal: "gelin",
+  testimonials: "yorumlar",
   visit: "ziyaret",
 } as const;

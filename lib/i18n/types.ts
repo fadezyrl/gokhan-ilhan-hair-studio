@@ -37,7 +37,7 @@ export type Dictionary = {
     colour: string;
     cut: string;
     studio: string;
-    bridal: string;
+    testimonials: string;
     visit: string;
     book: string;
     bookShort: string;
@@ -56,6 +56,8 @@ export type Dictionary = {
     scroll: string;
     imageAlt: string;
     imageSlot: string;
+    slideshowLabel: string;
+    slideAlts: string[];
   };
   work: {
     label: string;
@@ -97,15 +99,17 @@ export type Dictionary = {
     imageAlt: string;
     imageSlot: string;
   };
-  bridal: {
+  testimonials: {
     label: string;
     titleBefore: string;
     titleEm: string;
     titleAfter: string;
-    body: string;
-    cta: string;
-    imageAlt: string;
-    imageSlot: string;
+    items: {
+      id: string;
+      quote: string;
+      name: string;
+      role: string;
+    }[];
   };
   visit: {
     label: string;

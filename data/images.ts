@@ -37,3 +37,13 @@ export const IMAGES: Record<ImageKey, string> = {
   b1: `${BASE}/blonde-updo.jpg`,
   v1: `${BASE}/honey.jpg`,
 };
+
+/** Hero slideshow — rapid premium crossfade */
+export const HERO_SLIDES = [
+  `${BASE}/honey.jpg`,
+  `${BASE}/balayage.jpg`,
+  `${BASE}/layers.jpg`,
+  `${BASE}/blonde-updo.jpg`,
+] as const;
+
+export const HERO_SLIDE_MS = 1800;

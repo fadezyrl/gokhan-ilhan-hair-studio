@@ -1,5 +1,5 @@
 import { SITE, NAV_IDS } from "@/data/site";
-import { PhotoSlot } from "@/components/ui/PhotoSlot/PhotoSlot";
+import { HeroMedia } from "@/components/sections/Hero/HeroMedia";
 import type { Dictionary } from "@/lib/i18n/types";
 
 type HeroProps = {
@@ -11,14 +11,7 @@ export const Hero = ({ dictionary }: HeroProps): React.JSX.Element => {
 
   return (
     <section className="hero light" data-nav="light">
-      <PhotoSlot
-        imageKey="hero"
-        alt={t.imageAlt}
-        slot={t.imageSlot}
-        priority
-        reveal={false}
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 58vw"
-      />
+      <HeroMedia alts={t.slideAlts} label={t.slideshowLabel} />
       <div className="txt">
         <span className="lbl rv">{t.eyebrow}</span>
         <h1 className="serif">

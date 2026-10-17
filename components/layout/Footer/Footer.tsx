@@ -37,7 +37,7 @@ export const Footer = ({ dictionary }: FooterProps): React.JSX.Element => {
               <a href={`#${NAV_IDS.work}`}>{dictionary.nav.work}</a>
               <a href={`#${NAV_IDS.colour}`}>{dictionary.nav.colour}</a>
               <a href={`#${NAV_IDS.cut}`}>{dictionary.nav.cut}</a>
-              <a href={`#${NAV_IDS.bridal}`}>{dictionary.nav.bridal}</a>
+              <a href={`#${NAV_IDS.testimonials}`}>{dictionary.nav.testimonials}</a>
               <a
                 href={SITE.bookingUrl}
                 target="_blank"

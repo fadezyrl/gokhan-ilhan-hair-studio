@@ -23,7 +23,7 @@ export const tr: Dictionary = {
     colour: "Renk",
     cut: "Kesim",
     studio: "Stüdyo",
-    bridal: "Gelin",
+    testimonials: "Yorumlar",
     visit: "Ziyaret",
     book: "Randevu Al",
     bookShort: "Randevu",
@@ -42,6 +42,13 @@ export const tr: Dictionary = {
     scroll: "Keşfet",
     imageAlt: "Gökhan İlhan Hair Studio’dan bir renk dönüşümü",
     imageSlot: "Hero · dikey sarışın / boyutlu renk fotoğrafı",
+    slideshowLabel: "Stüdyo çalışmaları galerisi",
+    slideAlts: [
+      "Bal ve sarışın katmanlı saç stili",
+      "Balayage renk dönüşümü",
+      "Katlı modern kesim",
+      "Zarif sarışın topuz",
+    ],
   },
   work: {
     label: "01 · İmza Çalışmalar",
@@ -96,15 +103,41 @@ export const tr: Dictionary = {
     imageAlt: "Gökhan İlhan bir konukla",
     imageSlot: "Stüdyo yaşam karesi",
   },
-  bridal: {
-    label: "04 · Gelin",
-    titleBefore: "En özel anlarınıza ",
-    titleEm: "zarif",
-    titleAfter: " dokunuşlar.",
-    body: "Gelin ve özel gün saçları için detayları birlikte konuşalım.",
-    cta: "Randevu İçin İletişime Geçin",
-    imageAlt: "Gelin saçı",
-    imageSlot: "Gelin & özel gün · geniş sinematik kadraj",
+  testimonials: {
+    label: "04 · Yorumlar",
+    titleBefore: "Stüdyoya ",
+    titleEm: "güvenenlerin",
+    titleAfter: " sözleri.",
+    items: [
+      {
+        id: "t1",
+        quote:
+          "Rengim sanki sadece benim için yapılmış gibi — ışıltılı, yumuşak ve tamamen doğal.",
+        name: "Elif A.",
+        role: "Balayage · Lefkoşa",
+      },
+      {
+        id: "t2",
+        quote:
+          "Her ziyaret sakin ve titiz. Gökhan önce dinliyor, sonra size ait bir görünüm şekillendiriyor.",
+        name: "Maya K.",
+        role: "Kesim & renk",
+      },
+      {
+        id: "t3",
+        quote:
+          "Gelin saçım bütün gün kusursuz durdu — zarif, romantik ve hayal ettiğim gibi.",
+        name: "Selin D.",
+        role: "Gelin stili",
+      },
+      {
+        id: "t4",
+        quote:
+          "İlk karşılamadan son dokunuşa kadar butik bir deneyim. Kendimi yükseltilmiş hissederek ayrılıyorum.",
+        name: "Nora B.",
+        role: "İmza renk",
+      },
+    ],
   },
   visit: {
     label: "05 · Ziyaret",

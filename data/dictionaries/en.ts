@@ -23,7 +23,7 @@ export const en: Dictionary = {
     colour: "Colour",
     cut: "Cut",
     studio: "Studio",
-    bridal: "Bridal",
+    testimonials: "Voices",
     visit: "Visit",
     book: "Book",
     bookShort: "Book",
@@ -42,6 +42,13 @@ export const en: Dictionary = {
     scroll: "Explore",
     imageAlt: "A colour transformation at Gökhan İlhan Hair Studio",
     imageSlot: "Hero · vertical blonde / dimensional colour photo",
+    slideshowLabel: "Studio work gallery",
+    slideAlts: [
+      "Honey blonde layered style",
+      "Balayage colour transformation",
+      "Modern layered cut",
+      "Elegant blonde updo",
+    ],
   },
   work: {
     label: "01 · Signature Work",
@@ -96,15 +103,41 @@ export const en: Dictionary = {
     imageAlt: "Gökhan İlhan with a guest",
     imageSlot: "Studio lifestyle frame",
   },
-  bridal: {
-    label: "04 · Bridal",
-    titleBefore: "Elegant touches for your ",
-    titleEm: "most special",
-    titleAfter: " moments.",
-    body: "Let’s discuss the details for bridal and special-occasion hair.",
-    cta: "Get in touch to book",
-    imageAlt: "Bridal hair",
-    imageSlot: "Bridal & special day · wide cinematic frame",
+  testimonials: {
+    label: "04 · Voices",
+    titleBefore: "Words from those who ",
+    titleEm: "trust",
+    titleAfter: " the studio.",
+    items: [
+      {
+        id: "t1",
+        quote:
+          "The colour feels like it was made only for me — luminous, soft, and completely natural.",
+        name: "Elif A.",
+        role: "Balayage · Nicosia",
+      },
+      {
+        id: "t2",
+        quote:
+          "Every visit is calm and precise. Gökhan listens first, then shapes a look that truly belongs to you.",
+        name: "Maya K.",
+        role: "Cut & colour",
+      },
+      {
+        id: "t3",
+        quote:
+          "My bridal hair held beautifully all day — refined, romantic, and exactly what I imagined.",
+        name: "Selin D.",
+        role: "Bridal styling",
+      },
+      {
+        id: "t4",
+        quote:
+          "A boutique experience from the first greeting to the final reveal. I leave feeling like myself, elevated.",
+        name: "Nora B.",
+        role: "Signature colour",
+      },
+    ],
   },
   visit: {
     label: "05 · Visit",
