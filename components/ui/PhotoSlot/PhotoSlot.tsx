@@ -10,6 +10,7 @@ type PhotoSlotProps = {
   className?: string;
   priority?: boolean;
   reveal?: boolean;
+  sizes?: string;
 };
 
 export const PhotoSlot = ({
@@ -20,6 +21,7 @@ export const PhotoSlot = ({
   className = "",
   priority = false,
   reveal = true,
+  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw",
 }: PhotoSlotProps): React.JSX.Element => {
   const src = IMAGES[imageKey];
   const classes = ["ph", className, reveal ? "rv" : ""].filter(Boolean).join(" ");
@@ -31,7 +33,8 @@ export const PhotoSlot = ({
           src={src}
           alt={alt}
           fill
-          sizes="(max-width: 860px) 100vw, 50vw"
+          sizes={sizes}
+          quality={90}
           priority={priority}
           loading={priority ? "eager" : "lazy"}
           style={{ objectFit: "cover" }}

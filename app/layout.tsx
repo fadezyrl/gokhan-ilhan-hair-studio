@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { DEFAULT_LOCALE } from "@/data/site";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -28,6 +28,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "tr_TR",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F3F0EB" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1817" },
+  ],
 };
 
 export default function RootLayout({

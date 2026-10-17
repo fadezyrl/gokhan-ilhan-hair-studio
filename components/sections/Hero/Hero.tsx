@@ -17,6 +17,7 @@ export const Hero = ({ dictionary }: HeroProps): React.JSX.Element => {
         slot={t.imageSlot}
         priority
         reveal={false}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 58vw"
       />
       <div className="txt">
         <span className="lbl rv">{t.eyebrow}</span>

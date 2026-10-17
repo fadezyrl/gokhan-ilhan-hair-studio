@@ -1,4 +1,19 @@
-@media (min-width: 861px) {
+/* Full desktop layout */
+@media (min-width: 1025px) {
+  .mbtn,
+  .mbook {
+    display: none;
+  }
+
+  .links {
+    position: static;
+    transform: none;
+    visibility: visible;
+    background: none;
+    flex-direction: row;
+    color: inherit;
+  }
+
   .hero {
     min-height: 100svh;
     display: grid;

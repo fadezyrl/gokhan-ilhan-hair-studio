@@ -12,7 +12,7 @@ export const SITE = {
   bookingUrl: "https://www.instagram.com/gokhanilhanhairstudio/",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=G%C3%B6khan+%C4%B0lhan+Hair+Studio+Lefko%C5%9Fa",
-  logoSrc: "/brand/mark.png",
+  logoSrc: "",
   year: 2026,
 } as const;
 

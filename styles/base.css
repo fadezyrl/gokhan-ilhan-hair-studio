@@ -10,7 +10,8 @@
   --mute: #5f554d;
   --serif: var(--font-serif), "Times New Roman", serif;
   --sans: var(--font-sans), system-ui, sans-serif;
-  --bp-mobile-max: 860px;
+  --bp-mobile-max: 640px;
+  --bp-tablet-max: 1024px;
   box-sizing: border-box;
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
@@ -41,15 +42,17 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 72px;
+  overflow-x: clip;
 }
 
 body {
   background: var(--bg);
   color: var(--ink);
   font: 400 16px / 1.7 var(--sans);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -60,6 +63,11 @@ a {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+
+main {
+  overflow-x: clip;
 }
 
 .serif {
@@ -307,6 +315,7 @@ nav#nav.scrolled {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   font: 500 11px / 1 var(--sans);
   letter-spacing: 0.2em;
@@ -317,6 +326,8 @@ nav#nav.scrolled {
     background 0.4s,
     color 0.4s;
   min-height: 48px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .btn.fill {
@@ -457,6 +468,7 @@ button:focus-visible {
 .book h2 {
   font-size: clamp(42px, 8vw, 128px);
   max-width: 10em;
+  overflow-wrap: anywhere;
 }
 
 .book h2 em {

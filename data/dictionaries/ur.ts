@@ -49,14 +49,10 @@ export const ur: Dictionary = {
     titleEm: "تصاویر",
     titleAfter: " بیان کریں۔",
     items: [
-      { key: "w1", alt: "سنہری تبدیلی", slot: "سنہری تبدیلی", cap: "سنہرا", tone: "", size: "r1" },
-      { key: "w2", alt: "جہتی رنگ", slot: "جہتی رنگ", cap: "جہتی رنگ", tone: "t2", size: "r2" },
-      { key: "w3", alt: "نمایاں کٹ", slot: "نمایاں کٹ · وسیع فریم", cap: "نمایاں کٹ", tone: "t3", size: "r3" },
-      { key: "w4", alt: "جدید اسٹائل", slot: "اسٹائل", cap: "عصری اسٹائل", tone: "", size: "r4" },
-      { key: "w5", alt: "دولہن کے بال", slot: "دولہن کے بال", cap: "دولہن", tone: "t2", size: "r5" },
-      { key: "w6", alt: "گھنگھریالے بال", slot: "گھنگھریالے", cap: "گھنگھریالے", tone: "t3", size: "r2" },
-      { key: "w7", alt: "K-style کٹ", slot: "K-style", cap: "K-Style", tone: "", size: "r1" },
-      { key: "w8", alt: "Butterfly کٹ", slot: "Butterfly", cap: "Butterfly", tone: "t2", size: "r4" },
+      { key: "w1", alt: "تہہ دار کٹ", slot: "تہیں", cap: "تہیں", tone: "", size: "r1" },
+      { key: "w2", alt: "ایش بلاںڈ بالایاژ", slot: "بالایاژ", cap: "بالایاژ", tone: "t2", size: "r2" },
+      { key: "w3", alt: "سنہرا اپ ڈو", slot: "اپ ڈو", cap: "اپ ڈو", tone: "t3", size: "r3" },
+      { key: "w4", alt: "گھنگھریالا پکسی", slot: "پکسی", cap: "پکسی", tone: "", size: "r4" },
     ],
   },
   colour: {
@@ -75,8 +71,7 @@ export const ur: Dictionary = {
     mainSlot: "مرکزی پورٹریٹ · رنگ کی تبدیلی",
     tones: [
       { key: "c2", alt: "سنہرا تفصیل", slot: "سنہرا", tone: "t2" },
-      { key: "c3", alt: "بھورا ٹون", slot: "بھورا", tone: "" },
-      { key: "c4", alt: "زندہ رنگ", slot: "زندہ رنگ", tone: "t4" },
+      { key: "c3", alt: "جہتی تہیں", slot: "تہیں", tone: "" },
     ],
   },
   cut: {
@@ -98,8 +93,8 @@ export const ur: Dictionary = {
     approach: "ہر اپائنٹمنٹ آپ کے اپنے اسٹائل سے شروع ہوتی ہے۔",
     placeLabel: "مقام",
     place: "لفکوشا، شمالی قبرص",
-    imageAlt: "سٹوڈیو سے ایک فریم",
-    imageSlot: "سٹوڈیو / گوکھان اِلہان پورٹریٹ",
+    imageAlt: "گوکھان اِلہان ایک مہمان کے ساتھ",
+    imageSlot: "سٹوڈیو لائف اسٹائل فریم",
   },
   bridal: {
     label: "04 · دولہن",

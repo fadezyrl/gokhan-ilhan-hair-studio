@@ -1,19 +1,37 @@
-@media (max-width: 860px) {
+/* Phones */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 64px;
+  }
+
+  .wrap {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  nav#nav {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    gap: 12px;
+  }
+
   .links {
     position: fixed;
     inset: 0;
+    padding: env(safe-area-inset-top, 0px) 24px env(safe-area-inset-bottom, 0px);
     background: var(--char);
     color: var(--ivory);
     flex-direction: column;
     justify-content: center;
-    gap: 28px;
+    gap: clamp(20px, 5vh, 28px);
     transform: translateY(-100%);
     transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
     visibility: hidden;
+    overflow-y: auto;
   }
 
   .links a {
-    font: 300 34px / 1 var(--serif);
+    font: 300 clamp(28px, 9vw, 34px) / 1.1 var(--serif);
     letter-spacing: 0;
     text-transform: none;
   }
@@ -35,6 +53,8 @@
     display: block;
     position: relative;
     z-index: 70;
+    min-height: 44px;
+    min-width: 44px;
   }
 
   body.menu .mbtn,
@@ -46,14 +66,21 @@
   .mbook {
     display: block;
     margin-left: auto;
-    margin-right: 18px;
+    margin-right: 10px;
     font: 500 11px / 1 var(--sans);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     border-bottom: 1px solid currentColor;
-    padding: 6px 0;
+    padding: 10px 0;
     position: relative;
     z-index: 70;
+  }
+
+  .btn {
+    padding: 16px 20px;
+    letter-spacing: 0.14em;
+    width: 100%;
+    justify-content: center;
   }
 
   .hero {
@@ -62,41 +89,66 @@
   }
 
   .hero .ph {
-    height: 68svh;
-    min-height: 0;
+    height: min(62svh, 520px);
+    min-height: 280px;
   }
 
   .hero .txt {
-    padding: 0 20px 44px;
-    margin-top: -84px;
+    padding: 0 16px 40px;
+    margin-top: -72px;
     position: relative;
   }
 
   .hero h1 {
-    font-size: clamp(42px, 13vw, 64px);
+    font-size: clamp(36px, 11vw, 52px);
     color: var(--ink);
-    margin: 18px 0 28px;
+    margin: 14px 0 20px;
+    overflow-wrap: anywhere;
   }
 
   .hero h1 span {
     display: block;
+    padding-left: 0 !important;
   }
 
   .hero p {
-    max-width: 340px;
+    max-width: none;
     color: var(--mute);
     font-size: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
 
   .hero .row {
     display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
   }
 
   .scroll {
     display: none;
+  }
+
+  .work,
+  .colour,
+  .cut,
+  .bridal,
+  .visit {
+    padding: clamp(56px, 14vw, 96px) 0;
+  }
+
+  .studio {
+    padding: clamp(64px, 16vw, 110px) 0;
+  }
+
+  .book {
+    padding: clamp(72px, 18vw, 120px) 0;
+  }
+
+  .sh h2,
+  .work-title {
+    font-size: clamp(32px, 9vw, 48px);
+    max-width: none;
   }
 
   .r1,
@@ -120,6 +172,11 @@
     display: none;
   }
 
+  .rail {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
   .rail .ph {
     margin-bottom: 0;
   }
@@ -127,7 +184,7 @@
   .cgrid {
     display: flex;
     flex-direction: column;
-    gap: clamp(14px, 2vw, 28px);
+    gap: 16px;
   }
 
   .cgrid .main {
@@ -139,12 +196,13 @@
   }
 
   .cgrid h2 {
-    font-size: clamp(40px, 5.8vw, 92px);
-    margin: 20px 0 28px;
+    font-size: clamp(34px, 9vw, 48px);
+    margin: 16px 0 20px;
+    overflow-wrap: anywhere;
   }
 
   .cgrid .copy p {
-    max-width: 420px;
+    max-width: none;
     color: var(--mute);
   }
 
@@ -152,7 +210,7 @@
     margin-top: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: clamp(14px, 2vw, 28px);
+    gap: 12px;
   }
 
   .tones .ph {
@@ -169,16 +227,17 @@
   }
 
   .dim {
-    margin-top: 36px;
+    margin-top: 28px;
     border-top: 1px solid rgba(243, 240, 235, 0.18);
   }
 
   .dim div {
     display: flex;
     justify-content: space-between;
-    padding: 16px 0;
+    gap: 12px;
+    padding: 14px 0;
     border-bottom: 1px solid rgba(243, 240, 235, 0.18);
-    font: 300 22px / 1.2 var(--serif);
+    font: 300 clamp(18px, 5vw, 22px) / 1.25 var(--serif);
   }
 
   .dim span {
@@ -186,12 +245,13 @@
     letter-spacing: 0.2em;
     color: var(--champ);
     align-self: center;
+    flex-shrink: 0;
   }
 
   .cutg {
     display: flex;
     flex-direction: column;
-    gap: clamp(14px, 2vw, 28px);
+    gap: 16px;
   }
 
   .cutg .big {
@@ -199,21 +259,22 @@
   }
 
   .cutg .side {
-    gap: 20px;
+    gap: 16px;
     display: flex;
     flex-direction: column;
   }
 
   .cutg .small {
-    margin: -60px 0 0 38%;
-    width: 62%;
+    margin: -48px 0 0 36%;
+    width: 64%;
     aspect-ratio: 3 / 4;
-    border: 10px solid var(--bg);
+    border: 8px solid var(--bg);
   }
 
   .cutg h2 {
-    margin-top: 12px;
-    font-size: clamp(38px, 6.2vw, 100px);
+    margin-top: 8px;
+    font-size: clamp(32px, 9vw, 48px);
+    overflow-wrap: anywhere;
   }
 
   .cutg h2 em {
@@ -222,18 +283,19 @@
 
   .cutg .note {
     color: var(--mute);
-    max-width: 420px;
+    max-width: none;
   }
 
   .stg {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: clamp(14px, 2vw, 28px);
+    gap: 20px;
   }
 
   .stg blockquote {
-    font-size: clamp(34px, 5vw, 78px);
+    font-size: clamp(28px, 8vw, 40px);
+    overflow-wrap: anywhere;
   }
 
   .stg blockquote em {
@@ -241,17 +303,17 @@
   }
 
   .stg .ph {
-    width: 72%;
+    width: 78%;
     align-self: flex-end;
-    margin-top: 20px;
+    margin-top: 8px;
     aspect-ratio: 4 / 5;
   }
 
   .ann {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px 22px;
-    margin-top: clamp(20px, 3vw, 40px);
+    gap: 8px;
+    margin-top: 20px;
     font-size: 14px;
     color: var(--mute);
     font-family: var(--sans);
@@ -264,14 +326,14 @@
 
   .bridal .wide {
     aspect-ratio: 4 / 5;
-    margin-bottom: clamp(28px, 4vw, 56px);
+    margin-bottom: 24px;
   }
 
   .brow {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 18px;
   }
 
   .brow .lbl {
@@ -281,14 +343,16 @@
   }
 
   .brow h2 {
-    font-size: clamp(34px, 5vw, 76px);
+    font-size: clamp(30px, 8vw, 44px);
+    overflow-wrap: anywhere;
   }
 
   .brow .act {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
+    gap: 16px;
+    align-items: stretch;
+    width: 100%;
   }
 
   .brow .act p {
@@ -299,7 +363,7 @@
   .vg {
     display: flex;
     flex-direction: column;
-    gap: clamp(20px, 3vw, 48px);
+    gap: 24px;
   }
 
   .vg .ph {
@@ -307,8 +371,9 @@
   }
 
   .vg h2 {
-    font-size: clamp(38px, 5vw, 76px);
-    margin: 18px 0 36px;
+    font-size: clamp(32px, 8vw, 48px);
+    margin: 14px 0 24px;
+    overflow-wrap: anywhere;
   }
 
   .dl {
@@ -317,9 +382,9 @@
 
   .dl div {
     display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 16px;
-    padding: 20px 0;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 16px 0;
     border-bottom: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
   }
 
@@ -332,7 +397,8 @@
 
   .dl dd {
     margin: 0;
-    font: 300 22px / 1.35 var(--serif);
+    font: 300 clamp(18px, 5vw, 22px) / 1.35 var(--serif);
+    overflow-wrap: anywhere;
   }
 
   .dl a {
@@ -340,6 +406,54 @@
   }
 
   .vg .btn {
-    margin-top: 32px;
+    margin-top: 24px;
+  }
+
+  .book h2 {
+    font-size: clamp(34px, 10vw, 52px);
+    max-width: none;
+    overflow-wrap: anywhere;
+  }
+
+  .book .row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .book p {
+    max-width: none;
+  }
+
+  .fg {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .fl {
+    gap: 16px 20px;
+  }
+
+  .fc {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Short phones / landscape */
+@media (max-width: 640px) and (max-height: 480px) {
+  .hero .ph {
+    height: min(78svh, 360px);
+    min-height: 200px;
+  }
+
+  .hero .txt {
+    margin-top: -48px;
+    padding-bottom: 28px;
+  }
+
+  .links {
+    justify-content: flex-start;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 72px);
   }
 }

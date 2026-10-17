@@ -49,14 +49,10 @@ export const tr: Dictionary = {
     titleEm: "fotoğraflar",
     titleAfter: " anlatsın.",
     items: [
-      { key: "w1", alt: "Sarışın dönüşüm", slot: "Sarışın dönüşüm", cap: "Sarışın", tone: "", size: "r1" },
-      { key: "w2", alt: "Boyutlu renk", slot: "Boyutlu renk", cap: "Boyutlu Renk", tone: "t2", size: "r2" },
-      { key: "w3", alt: "İmza kesim", slot: "İmza kesim · geniş kadraj", cap: "İmza Kesim", tone: "t3", size: "r3" },
-      { key: "w4", alt: "Modern stil", slot: "Stil", cap: "Çağdaş Stil", tone: "", size: "r4" },
-      { key: "w5", alt: "Gelin saçı", slot: "Gelin saçı", cap: "Gelin", tone: "t2", size: "r5" },
-      { key: "w6", alt: "Kıvırcık stil", slot: "Kıvırcık", cap: "Kıvırcık", tone: "t3", size: "r2" },
-      { key: "w7", alt: "K-style kesim", slot: "K-style", cap: "K-Style", tone: "", size: "r1" },
-      { key: "w8", alt: "Butterfly kesim", slot: "Butterfly", cap: "Butterfly", tone: "t2", size: "r4" },
+      { key: "w1", alt: "Katlı kesim", slot: "Katlar", cap: "Katlar", tone: "", size: "r1" },
+      { key: "w2", alt: "Kül sarısı balayage", slot: "Balayage", cap: "Balayage", tone: "t2", size: "r2" },
+      { key: "w3", alt: "Sarışın topuz", slot: "Topuz", cap: "Topuz", tone: "t3", size: "r3" },
+      { key: "w4", alt: "Kıvırcık pixie", slot: "Pixie", cap: "Pixie", tone: "", size: "r4" },
     ],
   },
   colour: {
@@ -75,8 +71,7 @@ export const tr: Dictionary = {
     mainSlot: "Ana portre · renk dönüşümü",
     tones: [
       { key: "c2", alt: "Sarışın detay", slot: "Sarışın", tone: "t2" },
-      { key: "c3", alt: "Kahverengi ton", slot: "Kahve", tone: "" },
-      { key: "c4", alt: "Canlı renk", slot: "Canlı renk", tone: "t4" },
+      { key: "c3", alt: "Boyutlu katlar", slot: "Katlar", tone: "" },
     ],
   },
   cut: {
@@ -98,8 +93,8 @@ export const tr: Dictionary = {
     approach: "Her randevu, kişinin kendi tarzından başlar.",
     placeLabel: "Yer",
     place: "Lefkoşa, Kuzey Kıbrıs",
-    imageAlt: "Stüdyodan bir kare",
-    imageSlot: "Stüdyo / Gökhan İlhan portresi",
+    imageAlt: "Gökhan İlhan bir konukla",
+    imageSlot: "Stüdyo yaşam karesi",
   },
   bridal: {
     label: "04 · Gelin",

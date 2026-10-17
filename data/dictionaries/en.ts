@@ -49,14 +49,10 @@ export const en: Dictionary = {
     titleEm: "transformation",
     titleAfter: ".",
     items: [
-      { key: "w1", alt: "Blonde transformation", slot: "Blonde transformation", cap: "Blonde", tone: "", size: "r1" },
-      { key: "w2", alt: "Dimensional colour", slot: "Dimensional colour", cap: "Dimensional Colour", tone: "t2", size: "r2" },
-      { key: "w3", alt: "Signature cut", slot: "Signature cut · wide frame", cap: "Signature Cut", tone: "t3", size: "r3" },
-      { key: "w4", alt: "Modern style", slot: "Style", cap: "Contemporary Style", tone: "", size: "r4" },
-      { key: "w5", alt: "Bridal hair", slot: "Bridal hair", cap: "Bridal", tone: "t2", size: "r5" },
-      { key: "w6", alt: "Curly style", slot: "Curly", cap: "Curly", tone: "t3", size: "r2" },
-      { key: "w7", alt: "K-style cut", slot: "K-style", cap: "K-Style", tone: "", size: "r1" },
-      { key: "w8", alt: "Butterfly cut", slot: "Butterfly", cap: "Butterfly", tone: "t2", size: "r4" },
+      { key: "w1", alt: "Layered cut", slot: "Layers", cap: "Layers", tone: "", size: "r1" },
+      { key: "w2", alt: "Ash blonde balayage", slot: "Balayage", cap: "Balayage", tone: "t2", size: "r2" },
+      { key: "w3", alt: "Blonde updo", slot: "Updo", cap: "Updo", tone: "t3", size: "r3" },
+      { key: "w4", alt: "Curly pixie", slot: "Pixie", cap: "Pixie", tone: "", size: "r4" },
     ],
   },
   colour: {
@@ -75,8 +71,7 @@ export const en: Dictionary = {
     mainSlot: "Main portrait · colour transformation",
     tones: [
       { key: "c2", alt: "Blonde detail", slot: "Blonde", tone: "t2" },
-      { key: "c3", alt: "Brown tone", slot: "Brown", tone: "" },
-      { key: "c4", alt: "Vivid colour", slot: "Vivid colour", tone: "t4" },
+      { key: "c3", alt: "Dimensional layers", slot: "Layers", tone: "" },
     ],
   },
   cut: {
@@ -98,8 +93,8 @@ export const en: Dictionary = {
     approach: "Every appointment begins with your own style.",
     placeLabel: "Place",
     place: "Nicosia, Northern Cyprus",
-    imageAlt: "A frame from the studio",
-    imageSlot: "Studio / Gökhan İlhan portrait",
+    imageAlt: "Gökhan İlhan with a guest",
+    imageSlot: "Studio lifestyle frame",
   },
   bridal: {
     label: "04 · Bridal",

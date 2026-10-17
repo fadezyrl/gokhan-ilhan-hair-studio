@@ -1,0 +1,360 @@
+/* Tablet / compact desktop: stacked layouts, hamburger nav */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .links {
+    position: fixed;
+    inset: 0;
+    background: var(--char);
+    color: var(--ivory);
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    transform: translateY(-100%);
+    transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    visibility: hidden;
+  }
+
+  .links a {
+    font: 300 clamp(32px, 5vw, 42px) / 1 var(--serif);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .links .cta {
+    border: 0;
+  }
+
+  body.menu .links {
+    transform: none;
+    visibility: visible;
+  }
+
+  body.menu nav#nav {
+    z-index: 60;
+  }
+
+  .mbtn {
+    display: block;
+    position: relative;
+    z-index: 70;
+  }
+
+  body.menu .mbtn,
+  body.menu .logo,
+  body.menu .mbook {
+    color: var(--ivory);
+  }
+
+  .mbook {
+    display: block;
+    margin-left: auto;
+    margin-right: 18px;
+    font: 500 11px / 1 var(--sans);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid currentColor;
+    padding: 6px 0;
+    position: relative;
+    z-index: 70;
+  }
+
+  .hero {
+    display: block;
+    padding-top: 72px;
+  }
+
+  .hero .ph {
+    height: min(72svh, 720px);
+    min-height: 420px;
+  }
+
+  .hero .txt {
+    padding: 0 clamp(24px, 4vw, 48px) 56px;
+    margin-top: -96px;
+    position: relative;
+    max-width: 720px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 8vw, 72px);
+    color: var(--ink);
+    margin: 18px 0 28px;
+  }
+
+  .hero h1 span {
+    display: block;
+  }
+
+  .hero p {
+    max-width: 400px;
+    color: var(--mute);
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .hero .row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .scroll {
+    display: none;
+  }
+
+  .r1,
+  .r4 {
+    width: min(56vw, 420px);
+    aspect-ratio: 4 / 5;
+  }
+
+  .r2,
+  .r5 {
+    width: min(42vw, 320px);
+    aspect-ratio: 3 / 4;
+  }
+
+  .r3 {
+    width: min(70vw, 560px);
+    aspect-ratio: 16 / 10;
+  }
+
+  .arrows {
+    display: flex;
+  }
+
+  .rail .ph {
+    margin-bottom: 0;
+  }
+
+  .cgrid {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(18px, 3vw, 32px);
+  }
+
+  .cgrid .main {
+    aspect-ratio: 4 / 5;
+    max-width: 560px;
+  }
+
+  .cgrid .copy {
+    order: -1;
+    max-width: 640px;
+  }
+
+  .cgrid h2 {
+    font-size: clamp(44px, 6vw, 72px);
+    margin: 20px 0 28px;
+  }
+
+  .cgrid .copy p {
+    max-width: 480px;
+    color: var(--mute);
+  }
+
+  .tones {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: clamp(14px, 2vw, 24px);
+  }
+
+  .tones .ph {
+    aspect-ratio: 3 / 4;
+  }
+
+  .tones .ph:nth-child(2) {
+    margin-bottom: 0;
+  }
+
+  .tones .ph:nth-child(3) {
+    aspect-ratio: 3 / 4;
+  }
+
+  .dim {
+    margin-top: 36px;
+    border-top: 1px solid rgba(243, 240, 235, 0.18);
+  }
+
+  .dim div {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(243, 240, 235, 0.18);
+    font: 300 22px / 1.2 var(--serif);
+  }
+
+  .dim span {
+    font: 500 10px / 1 var(--sans);
+    letter-spacing: 0.2em;
+    color: var(--champ);
+    align-self: center;
+  }
+
+  .cutg {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(18px, 3vw, 32px);
+  }
+
+  .cutg .big {
+    aspect-ratio: 16 / 11;
+  }
+
+  .cutg .side {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .cutg .small {
+    margin: 0;
+    width: min(38%, 280px);
+    aspect-ratio: 3 / 4;
+    border: 10px solid var(--bg);
+  }
+
+  .cutg h2 {
+    margin-top: 8px;
+    font-size: clamp(42px, 6vw, 72px);
+  }
+
+  .cutg h2 em {
+    color: var(--taupe);
+  }
+
+  .cutg .note {
+    color: var(--mute);
+    max-width: 480px;
+  }
+
+  .stg {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(24px, 4vw, 48px);
+    align-items: center;
+  }
+
+  .stg blockquote {
+    font-size: clamp(36px, 5vw, 56px);
+  }
+
+  .stg blockquote em {
+    color: var(--taupe);
+  }
+
+  .stg .ph {
+    width: 100%;
+    margin-top: 0;
+    aspect-ratio: 4 / 5;
+  }
+
+  .ann {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 22px;
+    margin-top: clamp(20px, 3vw, 40px);
+    font-size: 14px;
+    color: var(--mute);
+    font-family: var(--sans);
+  }
+
+  .ann .lbl {
+    color: var(--taupe);
+    padding-top: 4px;
+  }
+
+  .bridal .wide {
+    aspect-ratio: 16 / 9;
+    margin-bottom: clamp(28px, 4vw, 48px);
+  }
+
+  .brow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 32px;
+    align-items: end;
+  }
+
+  .brow .lbl {
+    grid-column: 1 / -1;
+    color: var(--taupe);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--champ);
+    width: fit-content;
+  }
+
+  .brow h2 {
+    font-size: clamp(40px, 5vw, 64px);
+  }
+
+  .brow .act {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .brow .act p {
+    font-size: 14px;
+    color: var(--mute);
+  }
+
+  .vg {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(28px, 4vw, 48px);
+    align-items: start;
+  }
+
+  .vg .ph {
+    aspect-ratio: 4 / 5;
+  }
+
+  .vg h2 {
+    font-size: clamp(40px, 5vw, 64px);
+    margin: 18px 0 28px;
+  }
+
+  .dl {
+    border-top: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  }
+
+  .dl div {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  }
+
+  .dl dt {
+    font: 500 10px / 1.8 var(--sans);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--taupe);
+  }
+
+  .dl dd {
+    margin: 0;
+    font: 300 22px / 1.35 var(--serif);
+  }
+
+  .dl a {
+    border-bottom: 1px solid currentColor;
+  }
+
+  .vg .btn {
+    margin-top: 28px;
+  }
+
+  .book h2 {
+    font-size: clamp(48px, 7vw, 88px);
+  }
+
+  .book .row {
+    align-items: flex-start;
+  }
+}
